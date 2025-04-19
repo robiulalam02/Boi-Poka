@@ -8,7 +8,7 @@ const Hero = () => {
                 <button className='bg-[#23BE0A] py-3 px-6 rounded-md text-white font-medium'>View The List</button>
             </div>
             <div>
-                <img className='w-[320px]' src="/src/assets/book-hero.png" alt="" />
+                <img className='w-[320px]' src="src/assets/book-hero.png" alt="" />
             </div>
         </div>
     );
