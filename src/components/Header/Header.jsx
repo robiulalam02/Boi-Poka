@@ -13,9 +13,9 @@ const Header = () => {
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            <li><a>Home</a></li>
-                            <li><a>Listed Books</a></li>
-                            <li><a>Pages to Read</a></li>
+                            <li><a href='/'>Home</a></li>
+                            <li><a href='/readlist'>Listed Books</a></li>
+                            <li><a href='/readcharts'>Pages to Read</a></li>
                         </ul>
                     </div>
                     <a className="text-2xl font-bold">Boi Poka</a>
@@ -24,7 +24,7 @@ const Header = () => {
                     <ul className="menu menu-horizontal px-1 text-lg gap-8">
                         <li><a href='/'>Home</a></li>
                         <li><a href='/readlist'>Listed Books</a></li>
-                        <li><a>Pages to Read</a></li>
+                        <li><a href='/readcharts'>Pages to Read</a></li>
                     </ul>
                 </div>
                 <div className="navbar-end flex gap-4">
