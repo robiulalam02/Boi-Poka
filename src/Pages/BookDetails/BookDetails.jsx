@@ -1,5 +1,7 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
+import { setLocalData } from '../../utilities/localStorage';
+import { setLocalWishData } from '../../utilities/LSWishList';
 
 const BookDetails = () => {
     const { Id } = useParams();
@@ -8,7 +10,16 @@ const BookDetails = () => {
 
     const bookData = data.find(book => book.bookId === convertedId)
 
-    console.log(bookData);
+    const handleAddToReadBook = (id) => {
+        setLocalData(id);
+        alert('book mark as read successfully')
+    }
+
+    const handleAddWishList = (id) => {
+        setLocalWishData(id);
+        alert('book mark as read successfully')
+    }
+
     return (
         <div className='max-w-screen-xl mx-auto flex justify-between gap-8 mb-20 mt-4'>
             <div className='bg-[#1313130D] w-full rounded-2xl flex justify-center items-center'>
@@ -40,8 +51,8 @@ const BookDetails = () => {
                     <p>Rating : <span className='font-bold'>{bookData.rating}</span></p>
                 </div>
                 <div className='flex gap-5'>
-                    <button className='bg-transparent text-black py-3 px-6 rounded-md border border-slate-300 font-medium'>Read</button>
-                    <button className='bg-[#50B1C9] py-3 px-6 rounded-md text-white font-medium'>Wishlist</button>
+                    <button onClick={() => handleAddToReadBook(bookData.bookId)} className='bg-transparent text-black py-3 px-6 rounded-md border border-slate-300 font-medium'>Read</button>
+                    <button onClick={() => handleAddWishList(bookData.bookId)} className='bg-[#50B1C9] py-3 px-6 rounded-md text-white font-medium'>Wishlist</button>
                 </div>
             </div>
         </div>
